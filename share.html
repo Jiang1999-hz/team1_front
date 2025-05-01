@@ -1,0 +1,14 @@
+<!-- 最初は非表示 -->
+<button id="admin-btn" style="display: none;">管理者用ボタン</button>
+
+<script>
+  // 仮にサーバーから渡されたユーザー情報
+  const currentUser = {
+    username: "taro",
+    role: "admin" // または "user"
+  };
+
+  if (currentUser.role === "admin") {
+    document.getElementById("admin-btn").style.display = "block";
+  }
+</script>
