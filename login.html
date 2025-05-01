@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ログイン</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .login-box {
+      text-align: center;
+    }
+    input[type="text"] {
+      padding: 8px;
+      width: 200px;
+      margin-bottom: 10px;
+    }
+    button {
+      padding: 8px 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-box">
+    <input type="text" id="roleInput" placeholder="Role を入力してください">
+    <br>
+    <button onclick="login()">ログイン</button>
+  </div>
+
+  <script>
+    function login() {
+      const role = document.getElementById("roleInput").value.trim().toLowerCase();
+
+      if (role === "sales") {
+        window.location.href = "/sales_page.html";
+      } else if (role === "supervisor") {
+        window.location.href = "/supervisor_page.html";
+      } else if (role === "admin") {
+        window.location.href = "/admin_page.html";
+      } else {
+        alert("無効な入力です。sales、supervisor、admin のいずれかを入力してください。");
+      }
+    }
+  </script>
+</body>
+</html>
